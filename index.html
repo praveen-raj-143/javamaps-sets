@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Maps & Sets</h1>
+    <ol>
+        <li>
+            <h2>
+                "Problem:
+                You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+                Your task is to remove all the duplicate occurrences of characters in the string.
+                
+                Input:
+                abcadeecfb
+                
+                Output:
+                abcdef"                
+            </h2>
+            <h3>Code :</h3>
+            <pre>
+                let string ="abcadeecfb";
+                let S=new Set();
+                for(i=0;i < string.length;i++){
+                    S.add(string[i]);
+                }
+                let result="";
+                for(let count of S){
+                    result=result+count;
+                }
+                console.log(result);
+            </pre>
+            <h3>Output :</h3>
+            <p>abcdef</p>
+        </li>
+        <li>
+            <h2>
+                "Problem:
+                You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+                
+                Input:
+                abcadeecfb
+                
+                Output:
+                a=2
+                b=2
+                c=2
+                d=1
+                e=2
+                f=1"                
+            </h2>
+            <h3>Code :</h3>
+            <pre>
+                let s= "abcadeecfb";
+                let map = new Map();
+                for(i=0;i < s .length;i++){
+                    if(map.has(s[i])){
+                        let value=map.get(s[i]);
+                        map.set(s[i],value+1);
+                    }
+                    else{
+                        map.set(s[i],1);
+                    }
+                }
+                for(let [k,v] of map){
+                    console.log(k+" -+=> "+v);
+                }
+            </pre>
+            <h3>Output :</h3>
+            <pre>
+                a -+=> 2
+                b -+=> 2
+                c -+=> 2
+                d -+=> 1
+                e -+=> 2
+                f -+=> 1                
+            </pre>
+        </li>
+    </ol>
+    <script src="index.js"></script>
+</body>
+</html>
